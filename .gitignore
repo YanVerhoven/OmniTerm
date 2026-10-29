@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+*.sqlite3
+.terminal_sim/
+.venv/
+venv/
