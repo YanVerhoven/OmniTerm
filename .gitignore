@@ -4,3 +4,4 @@ __pycache__/
 .terminal_sim/
 .venv/
 venv/
+node_modules/

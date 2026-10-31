@@ -1,0 +1,9 @@
+{
+  "name": "omniterm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline virtual terminal simulator",
+  "main": "electron/main.cjs",
+  "scripts": { "start": "electron ." },
+  "devDependencies": { "electron": "^38.0.0" }
+}

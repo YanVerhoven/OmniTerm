@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>OmniTerm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <button class="brand" id="brandHome" aria-label="OmniTerm">
+          <span class="brand-mark">o</span><span class="brand-name">OmniTerm</span>
+          <span class="sidebar-toggle" aria-hidden="true">☰</span>
+        </button>
+        <button class="new-chat" id="newSession"><span class="plus">＋</span><span>Новая сессия</span><kbd>Ctrl K</kbd></button>
+      </div>
+      <div class="session-heading"><span>Недавние</span><button id="searchSessions" title="Поиск сессий">⌕</button></div>
+      <div id="sessionList" class="session-list"></div>
+      <div class="sidebar-bottom">
+        <div class="sandbox-card"><span class="shield">◇</span><span><b>Изолированная среда</b><small>Команды не затрагивают систему</small></span><i class="status-dot"></i></div>
+        <button class="side-action" id="historyButton"><span>◷</span>История очистки</button>
+        <button class="profile-button" id="settingsButton"><span class="avatar">О</span><span><b>Настройки</b><small>Локальное приложение</small></span><span class="more">•••</span></button>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="titlebar">
+        <div class="title-left"><span class="workspace-title" id="activeName">PowerShell</span><span class="shell-pill" id="shellLabel">WINDOWS POWERSHELL</span><span class="virtual-pill"><i></i>ВИРТУАЛЬНО</span></div>
+        <div class="title-actions"><button id="rename" class="icon-button" title="Переименовать">✎</button><button id="sessionMenu" class="icon-button" title="Параметры сессии">•••</button><span class="title-separator"></span><button id="minimize" class="window-button" title="Свернуть">−</button><button id="maximize" class="window-button" title="Развернуть">□</button><button id="close" class="window-button close-button" title="Закрыть">×</button></div>
+      </header>
+      <section id="terminal" class="terminal">
+        <div class="terminal-meta"><span class="path-chip"><span class="folder-icon">▰</span><span id="cwd">C:/Deploy</span></span><span class="meta-right"><span class="offline-dot"></span>Офлайн</span></div>
+        <div id="output" class="output" aria-live="polite"></div>
+        <div id="welcome" class="welcome">
+          <div class="welcome-mark">&gt;_</div>
+          <h1>Ваша виртуальная консоль</h1>
+          <p>Исследуйте Bash и PowerShell в безопасной изолированной среде.</p>
+          <div class="suggestions"><button data-command="help"><b>С чего начать</b><span>Посмотреть список команд</span><code>help</code></button><button data-command="ls"><b>Обзор файлов</b><span>Изучить виртуальный каталог</span><code>ls</code></button><button data-command="git status"><b>Git в песочнице</b><span>Проверить виртуальный репозиторий</span><code>git status</code></button></div>
+        </div>
+        <div class="composer-wrap"><div class="composer"><span id="prompt" class="prompt">PS C:\Deploy&gt;</span><textarea id="command" rows="1" placeholder="Введите команду…" spellcheck="false" autocomplete="off"></textarea><button id="runCommand" class="run-button" title="Выполнить команду">↑</button></div><div class="composer-foot"><span>Команды выполняются только в виртуальной файловой системе</span><span><kbd>Enter</kbd> выполнить · <kbd>Shift Enter</kbd> новая строка</span></div></div>
+      </section>
+      <footer class="statusbar"><span><i class="green-dot"></i> ГОТОВО</span><span>VIRTUAL FILESYSTEM</span><span>NETWORK OFFLINE</span><span id="sessionExpiry" class="expiry"></span><span class="status-right">OmniTerm · локальная сессия</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><header class="modal-header"><div><h2 id="modalTitle">Настройки</h2><p>Персонализируйте рабочее пространство.</p></div><button class="icon-button" id="closeModal" aria-label="Закрыть">×</button></header><div id="modalContent" class="modal-content"></div><footer class="modal-footer"><button id="cancelModal" class="secondary-button">Закрыть</button><button id="saveModal" class="primary-button">Сохранить</button></footer></section></div>
+  <div id="contextMenu" class="context-menu" hidden></div>
+  <script src="renderer.js"></script>
+</body>
+</html>
