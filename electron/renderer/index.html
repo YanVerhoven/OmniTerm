@@ -21,6 +21,7 @@
       <div id="sessionList" class="session-list"></div>
       <div class="sidebar-bottom">
         <div class="sandbox-card"><span class="shield">◇</span><span><b>Изолированная среда</b><small>Команды не затрагивают систему</small></span><i class="status-dot"></i></div>
+        <button class="side-action" id="restoreButton"><span>↶</span>Восстановить закрытую</button>
         <button class="side-action" id="historyButton"><span>◷</span>История очистки</button>
         <button class="profile-button" id="settingsButton"><span class="avatar">О</span><span><b>Настройки</b><small>Локальное приложение</small></span><span class="more">•••</span></button>
       </div>
@@ -29,7 +30,7 @@
     <main class="workspace">
       <header class="titlebar">
         <div class="title-left"><span class="workspace-title" id="activeName">PowerShell</span><span class="shell-pill" id="shellLabel">WINDOWS POWERSHELL</span><span class="virtual-pill"><i></i>ВИРТУАЛЬНО</span></div>
-        <div class="title-actions"><button id="rename" class="icon-button" title="Переименовать">✎</button><button id="sessionMenu" class="icon-button" title="Параметры сессии">•••</button><span class="title-separator"></span><button id="minimize" class="window-button" title="Свернуть">−</button><button id="maximize" class="window-button" title="Развернуть">□</button><button id="close" class="window-button close-button" title="Закрыть">×</button></div>
+        <div class="title-actions"><button id="screenshot" class="icon-button" title="Сохранить скриншот">▣</button><button id="rename" class="icon-button" title="Переименовать">✎</button><button id="sessionMenu" class="icon-button" title="Параметры сессии">•••</button><span class="title-separator"></span><button id="minimize" class="window-button" title="Свернуть">−</button><button id="maximize" class="window-button" title="Развернуть">□</button><button id="close" class="window-button close-button" title="Закрыть">×</button></div>
       </header>
       <section id="terminal" class="terminal">
         <div class="terminal-meta"><span class="path-chip"><span class="folder-icon">▰</span><span id="cwd">C:/Deploy</span></span><span class="meta-right"><span class="offline-dot"></span>Офлайн</span></div>

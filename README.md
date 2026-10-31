@@ -8,8 +8,11 @@ Install Node.js 20 or newer, then run:
 
 ```sh
 npm install
+npm install-scripts approve electron
 npm start
 ```
+
+The second command authorizes Electron's package setup script to download the desktop runtime when npm's script-approval protection is enabled.
 
 Session state is saved as JSON in Electron's per-user application data directory. On startup, the app attempts a read-only import of existing sessions from `~/.terminal_sim/sessions.sqlite3`. Each session has its own virtual filesystem and process, service, package, and Git state. Temporary sessions expire after 12 hours; permanent sessions do not expire. Settings include theme, default shell, and console text size.
 
